@@ -1,0 +1,60 @@
+# GeneWeaver – GPU-Accelerated CRISPR Alignment Engine
+
+GeneWeaver is a Python project designed to compare guide RNA and target DNA sequences through a modular alignment workflow. The project explores how GPU computing can accelerate suitable sequence-comparison workloads.
+
+## Features (intended)
+- Sequence input and validation
+- Sequence preprocessing
+- DNA/RNA sequence comparison and alignment
+- Optional GPU-accelerated computation when supported
+- Readable alignment output
+
+## Project structure (suggested)
+```text
+GeneWeaver/
+├── main.py                 # Application entry point
+├── input_handler.py        # Reads sequence input
+├── validation.py           # Validates sequence format and symbols
+├── preprocessing.py        # Prepares sequences for alignment
+├── alignment.py            # Alignment logic / CPU implementation
+├── gpu_acceleration.py     # GPU backend, if implemented
+├── results.py              # Formats and displays results
+├── requirements.txt        # Python dependencies
+├── README.md               # Project overview and setup
+└── docs/
+    ├── PROJECT_PURPOSE.md
+    ├── INSTALLATION.md
+    ├── USER_GUIDE.md
+    └── MODULES.md
+```
+
+The structure above is a suggested documentation layout, not a claim that these exact files already exist in your source-code ZIP.
+
+## Installation
+1. Install a supported Python version.
+2. Create and activate a virtual environment.
+3. Install the dependencies:
+   `python -m pip install -r requirements.txt`
+4. Configure the GPU environment only if the implementation uses a GPU library.
+5. Run the project's actual entry-point file. If it is `main.py`, use:
+   `python main.py`
+
+## Basic usage
+1. Start the application.
+2. Enter or load the guide RNA sequence.
+3. Enter or load the target DNA sequence.
+4. Submit the sequences for validation.
+5. Start the alignment/comparison operation.
+6. Review the alignment and score information produced by the implemented program.
+
+## Input guidance
+Use nucleotide sequences in the format accepted by the application. Confirm whether the implementation expects DNA (`A`, `T`, `C`, `G`) or RNA (`A`, `U`, `C`, `G`) and whether FASTA files are supported.
+
+## Troubleshooting
+- `python is not recognized`: install Python and enable PATH, then reopen the terminal.
+- `ModuleNotFoundError`: install the missing dependency in the active virtual environment.
+- GPU not detected: check GPU compatibility, driver/CUDA installation, and the library version.
+- Invalid sequence: check accepted nucleotide symbols and input format.
+
+## Limitations
+The actual algorithm, scoring method, supported input formats, GPU backend, and output fields depend on the source-code implementation. This academic project is not a clinical or laboratory validation tool.
